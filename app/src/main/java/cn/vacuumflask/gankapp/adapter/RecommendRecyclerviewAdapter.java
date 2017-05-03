@@ -24,7 +24,6 @@ public class RecommendRecyclerviewAdapter extends RecyclerView.Adapter<Recommend
     private List<RecommendResponse> list;
 
     public RecommendRecyclerviewAdapter(List<RecommendResponse> list) {
-        L.i("适配器执行");
         this.list = list;
     }
 

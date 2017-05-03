@@ -1,4 +1,4 @@
-package cn.vacuumflask.gankapp.viewmodel;
+package cn.vacuumflask.gankapp.model;
 
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
@@ -12,9 +12,16 @@ import cn.vacuumflask.gankapp.util.L;
  */
 
 public class ImageLoad {
+    private static int index;
     @BindingAdapter("loadImageUrl")
     public static void imageLoadUrl(ImageView ivImage, String url) {
-        ivImage.setImageResource(R.mipmap.icon_main);
+        index++;
+        if (index%3==0){
+
+            ivImage.setImageResource(R.mipmap.icon_three);
+        }else {
+            ivImage.setImageResource(R.mipmap.icon_main);
+        }
     }
 
 

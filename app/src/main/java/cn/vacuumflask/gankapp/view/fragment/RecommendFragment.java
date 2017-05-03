@@ -2,6 +2,7 @@ package cn.vacuumflask.gankapp.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import cn.vacuumflask.gankapp.adapter.RecommendRecyclerviewAdapter;
 import cn.vacuumflask.gankapp.databinding.FragmentRecommendLayoutBinding;
 import cn.vacuumflask.gankapp.entity.response.RecommendResponse;
 import cn.vacuumflask.gankapp.util.L;
+import cn.vacuumflask.gankapp.view.activity.BaseActivity;
+import cn.vacuumflask.gankapp.viewmodel.RecommendViewModel;
 
 /**
  * Created by Administrator on 2017/4/27 0027.
@@ -22,20 +25,26 @@ import cn.vacuumflask.gankapp.util.L;
 
 public class RecommendFragment extends BaseFragment<FragmentRecommendLayoutBinding> {
 
+    public RecommendViewModel viewModel;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentRecommendLayoutBinding bindingView = getDataBindingView(R.layout.fragment_recommend_layout, container);
-
-        ArrayList<RecommendResponse> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            list.add(new RecommendResponse("地址" + i, "4-27 测试内容不要在意这么多好吗"));
+        FragmentActivity activity = getActivity();
+        //Activity判空
+        if (activity == null) {
+            return null;
         }
-
-        bindingView.fragmentRecommendRecyclerview.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-
-        RecommendRecyclerviewAdapter adapter = new RecommendRecyclerviewAdapter(list);
-        bindingView.fragmentRecommendRecyclerview.setAdapter(adapter);
+        //强转判断
+        BaseActivity baseActivity;
+        if (activity instanceof BaseActivity) {
+            baseActivity = ((BaseActivity) activity);
+        } else {
+            return null;
+        }
+        viewModel = new RecommendViewModel(baseActivity, bindingView);
+        viewModel.start();
         return bindingView.getRoot();
     }
 }

@@ -19,4 +19,12 @@
         <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
     </style>
 
+    <style name="itemTextViewStyle">
+        <item name="android:textColor">@color/color_black_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
 </resources>

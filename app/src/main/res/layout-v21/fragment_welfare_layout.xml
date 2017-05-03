@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <data/>
 
@@ -8,19 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/fragment_recommend_refresh"
+            android:id="@+id/fragment_ios_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/fragment_recommend_recyclerview"
+                android:id="@+id/fragment_ios_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+                android:layout_height="match_parent"/>
         </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
+
 
 </layout>
