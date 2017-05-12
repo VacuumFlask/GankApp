@@ -3,29 +3,23 @@ package cn.vacuumflask.gankapp.view.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-
 import cn.vacuumflask.gankapp.R;
-import cn.vacuumflask.gankapp.adapter.RecommendRecyclerviewAdapter;
 import cn.vacuumflask.gankapp.databinding.FragmentRecommendLayoutBinding;
-import cn.vacuumflask.gankapp.entity.response.RecommendResponse;
-import cn.vacuumflask.gankapp.util.L;
 import cn.vacuumflask.gankapp.view.activity.BaseActivity;
-import cn.vacuumflask.gankapp.viewmodel.RecommendViewModel;
+import cn.vacuumflask.gankapp.viewmodel.WelfareViewModel;
 
 /**
  * Created by Administrator on 2017/4/27 0027.
- * 推荐Fragment
+ * 福利Fragment
  */
 
-public class RecommendFragment extends BaseFragment<FragmentRecommendLayoutBinding> {
+public class WelfareFragment extends BaseFragment<FragmentRecommendLayoutBinding> {
 
-    public RecommendViewModel viewModel;
+    public WelfareViewModel viewModel;
 
     @Nullable
     @Override
@@ -43,7 +37,7 @@ public class RecommendFragment extends BaseFragment<FragmentRecommendLayoutBindi
         } else {
             return null;
         }
-        viewModel = new RecommendViewModel(baseActivity, bindingView);
+        viewModel = new WelfareViewModel(baseActivity, bindingView);
         viewModel.start();
         return bindingView.getRoot();
     }

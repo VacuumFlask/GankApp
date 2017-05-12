@@ -14,11 +14,11 @@ import cn.vacuumflask.gankapp.view.activity.BaseActivity;
  * 推荐 ViewModel
  */
 
-public class RecommendViewModel {
+public class WelfareViewModel {
     private BaseActivity activity;
     private FragmentRecommendLayoutBinding binding;
 
-    public RecommendViewModel(BaseActivity activity, FragmentRecommendLayoutBinding binding) {
+    public WelfareViewModel(BaseActivity activity, FragmentRecommendLayoutBinding binding) {
         this.activity = activity;
         this.binding = binding;
     }
