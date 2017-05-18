@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.graphics.Palette;
+import android.view.View;
 import android.view.Window;
 
 import java.util.ArrayList;
@@ -85,11 +86,10 @@ public class HomeViewModel {
 
     private void changeBgColor(int position) {
         final Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), resDraw[position]);
-        L.d("位图：" + bitmap);
         Palette palette = Palette.from(bitmap).generate();
 
         Palette.Swatch vibrantSwatch = palette.getLightVibrantSwatch();
-        if (vibrantSwatch==null){
+        if (vibrantSwatch == null) {
             return;
         }
 
@@ -106,6 +106,7 @@ public class HomeViewModel {
 
     /**
      * 颜色加深处理
+     *
      * @return 加深颜色
      */
     private int colorBurn(int RGBValues) {
